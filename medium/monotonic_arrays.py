@@ -1,3 +1,32 @@
+"""
+
+Write a function that takes in an array of integers and returns a boolean representing whether the array is monotonic.
+
+The array can contain duplicate values
+__________________________________________________________________
+Monotonic - entire array is either increasing or decreasing
+
+IE:
+arr = [5]
+arr1 = [-1, -6, -99, - 120, -230, -999]
+arr2 = [1, 3, 5, 5, 23, 45, 67, 98, 122]
+__________________________________________________________________
+
+If single element/ empty array
+- return true
+Since the array can contain duplicate values
+- cannot just take the first two elements to determine the direction
+- Need to check for flats and can use a helper function
+  - Checks the direction and then can compare current and previous values to see if breaks direction
+__________________________________________________________________
+Space and Time Complexity:
+
+Space: O(1)
+Time:  O(N)
+__________________________________________________________________
+Code:
+
+"""
 
 
 def check_monotonic_array(array):
