@@ -13,6 +13,7 @@ Quick option would be to iterate through sub sequence and cehck if each value is
 
 """
 
+
 def validate_subsequence(seq, sub_seq):
     """ Validates if sequence contains subsequence"""
     is_valid = True
