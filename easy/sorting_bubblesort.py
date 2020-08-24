@@ -1,4 +1,62 @@
+"""
+Basic Sorting Algorithm to sort list in ascending order
 
+Ex:
+Inital:  [8, 5, 2, 9, 5, 6, 3]
+Goal : [2, 3, 5, 5, 6, 8, 9]
+
+How:
+- Iterate through list
+- compare element with the next element
+- if the same - move one
+- If element is smaller than next element - move on
+- if element is larger than next element - swap, note the swap then move on
+When at the end of the array - check if swaps are done
+- if swaps where done - run through again
+- if no swaps were done - array is sorted
+
+Start of iteration 1
+8, 5 - swap - 5, 8
+8, 2 - swap - 5, 2, 8
+8, 9 - keep - 5, 2, 8, 9
+9, 5 - swap - 5, 2, 8, 5, 9
+9, 6 - swap - 5, 2, 8, 5, 6, 9
+9, 3 - swap-  5, 2, 8, 5, 6, 3, 9
+We now have the final position of 9
+End of iteration 1: [5, 2, 8, 5, 6, 3, 9]
+
+Start of iteration 2
+5, 2 - swap - 2, 5
+5, 8 - keep - 2, 5, 8
+8, 5 - swap - 2, 5, 5, 8
+8, 6 - swap - 2, 5, 5, 6, 8
+8, 3 - swap - 2, 5, 5, 6, 3, 8
+We now have the final position of 8
+End of iteration 2: [2, 5, 5, 6, 3, 8, 9 ]
+
+Start of iteration 3
+2, 5 - keep - 2, 5
+5, 5 - keep - 2, 5, 5
+5, 6 - keep - 2, 5, 5, 6
+6, 3 - swap - 2, 5, 5, 3, 6
+We now have the final position of 6
+End of iteration 3: [2, 5, 5, 3, 6, 8, 9 ]
+
+The next two iterations are just to get the 3 to be in the right place
+total number of iterations = 5
+End result:  [2, 3, 5, 5, 6, 8, 9]
+
+
+Space and Time Complexity:
+Space: O(1)
+- as the algorithm runs in space, everything is done within the input array
+- no additional memory is used
+
+Time: o(n^2)
+- where n ios the lenght of the array
+- We are looping through the array multiple times until sorted
+- In the worst case it would need to go through every possible combination which would be n2
+"""
 
 def bubble_sort(array):
     """ BubbleSort Algorithm"""
