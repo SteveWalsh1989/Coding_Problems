@@ -1,3 +1,45 @@
+"""
+Given a BST, create function that returns a list of it’s branch sums
+ordered from leftmost branch sums to the rightmost branch sums
+__________________________________________________________________
+
+0              1
+             /  \
+1          2       3
+         /   \    /  \
+2       4     5   6  7
+       / \    /
+3    8    9  10
+
+
+Here there are 5 branches ending in 8,9,10,6,7
+
+SO sums would be:
+1+2+4+8 =15
+1+2+4+9 = 16
+1+2+5+10 = 18
+1+3+6 = 10
+1+3+7 = 11
+
+result being : [15, 16, 18, 10, 11]
+__________________________________________________________________
+- Need to keep runing total passed into recursive function,
+    - when no more children it can be added to an array of branch values
+- Sum up values within the array
+__________________________________________________________________
+Space and Time Complexity
+
+
+Space: O(N)
+- impacted by list of branch sums
+- impacted by recurisve nature of function
+
+
+Time: O(N)
+- need to traverse all nodes
+
+
+"""
 
 
 def get_branch_sum(root):

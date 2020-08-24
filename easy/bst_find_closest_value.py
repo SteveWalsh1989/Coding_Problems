@@ -1,4 +1,31 @@
+"""
 
+Finding the closest value in a BST - numbers are unique
+__________________________________________________________________
+
+0               40
+             /      \
+1         33          61
+          /   \        /   \
+2        20    36      51   70
+        /              \
+3      9                55
+
+IE:
+Input - 12
+Res - 13
+__________________________________________________________________
+
+- Need to keep track of the closest values beet candidate
+- We need to check then the absolute value of what we have with the target value and node
+- if smaller difference then thats our new candidate
+- if target is smaller than current node then we traverse left
+- if target is larger than current node then we traverse right
+-edge case: if absolute difference between current node and target is 0 - we can stop
+
+__________________________________________________________________
+Code:
+"""
 def find_closest_value(tree, target):
     """ locates closet value within bst"""
     return find_closest_value_helper(tree, target, tree.value)
