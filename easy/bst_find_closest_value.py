@@ -23,9 +23,10 @@ __________________________________________________________________
 - if target is larger than current node then we traverse right
 -edge case: if absolute difference between current node and target is 0 - we can stop
 
-__________________________________________________________________
-Code:
+
 """
+
+
 def find_closest_value(tree, target):
     """ locates closet value within bst"""
     return find_closest_value_helper(tree, target, tree.value)

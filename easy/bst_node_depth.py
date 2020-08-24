@@ -1,4 +1,44 @@
+"""
+Given a BST return the sum of the depth of each node
 
+____________________________________________________________
+0             1
+            /   \
+1         2       3
+          / \    /  \
+2       4    5  6   7
+        /     \
+3     8        9
+
+
+Here being 0(1) + 1(2) + 2(4) + 3(2) = 16
+____________________________________________________________
+
+Recursive approach:
+——————————
+When we call the function we will return the sum of the depth of the node that we are at, plus the return values of calls to the recursive function on the left and right children of the node.
+
+Pass in the node and the depth of the node
+
+function as formula would be.
+f(n, d) = d + f( l, d+1) + f( r, d+1)
+n - node
+d - depth node
+l - left child of node
+r - right child of node
+
+Base case will be when there is a leaf node without children.
+
+
+____________________________________________________________
+Space and Time Complexity:
+
+Space: O(h)
+  - h - height
+
+Time: O(N)
+- n - number nodes
+"""
 
 def node_depth(root, depth=0):
     """ Main function"""
