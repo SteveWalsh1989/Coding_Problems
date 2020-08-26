@@ -121,8 +121,8 @@ class BST:
                         current_node.left = current_node.left.left
                     elif current_node.right is not None:
                         current_node.value = current_node.right.value
-                        current_node.right = current_node.right.right
                         current_node.left = current_node.right.left
+                        current_node.right = current_node.right.right
                     else:
                         # root node with no children - IE: deleting the BST
                         current_node.value = None
@@ -142,7 +142,7 @@ class BST:
         # called on right sub tree
         current_node = self
 
-        while current_node is not None:
+        while current_node.left is not None:
             current_node = current_node.left
 
         return current_node.value
