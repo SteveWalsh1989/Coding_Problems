@@ -1,8 +1,52 @@
 
+"""
+
+Write a BST class that supports:
+- inserting new nodes
+- removing nodes
+  - a node can be replaced by the left most node of it’s right sided child as it is smaller than any other node on it’s side and strictly greater than any node from the left hand child’s nodes from the original node
+- searching for values
+__________________________________________________________________
+
+BST is said to be valid if:
+- it’s value is strictly greater than the value of every node to it’s left
+- iuts value is equal to or less than any value to it’s right
+- it’s child nodes are either valid BST or null
+
+__________________________________________________________________
+Valid:
+0             5
+             /      \
+1         3          7
+          /   \       /   \
+2      2    4     6   9
+        /              \
+3    1                8
 
 
+Invalid
+0             5
+             /      \
+1         8          2
+          /   \       /   \
+2      2    4     6   9
+        /              \
+3    1                8
+__________________________________________________________________
 
+For all insertion, searching and deletion:
 
+Average: Time/space -: O(logN)
+- where n is number of nodes
+- since we are eliminating half the remaining nodes each time moving branch
+
+Worst case: Time/space O(N)
+- if the tree is set up in such a way that eliminating half each time didnt work
+- IE: tree with no left nodes
+
+__________________________________________________________________
+
+"""
 
 
 def main():
