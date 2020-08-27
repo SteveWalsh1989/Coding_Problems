@@ -21,13 +21,13 @@ Valid:
 
 
 Invalid
-0             5
+0                5
              /      \
 1         8          2
-          /   \       /   \
-2      2    4     6   9
-        /              \
-3    1                8
+        /  \       /   \
+2      2    4     6     9
+      /                  \
+3    1                    8
 __________________________________________________________________
 
 
@@ -36,6 +36,7 @@ __________________________________________________________________
 
 def validate_bst(bst):
     """Validates if bst is true bst """
+    # call helper function passing in the tree and the min/ max values for ints that could be initially used for root
     return validate_bst_helper(bst, float("-inf"), float("inf"))
 
 
@@ -58,20 +59,40 @@ def validate_bst_helper(tree, max_val, min_val):
 def main():
     """ Main function """
 
-    # create BST
-    root = BinaryTree(1)
-    root.left = BinaryTree(2)
-    root.left.left = BinaryTree(4)
-    root.left.left.left = BinaryTree(8)
-    root.left.left.right = BinaryTree(9)
-    root.left.right = BinaryTree(5)
-    root.left.right.right = BinaryTree(10)
-    root.right = BinaryTree(3)
-    root.right.left = BinaryTree(6)
-    root.right.right = BinaryTree(7)
+    # create invalid BST
+    invalid_bst = BinaryTree(1)
+    invalid_bst.left = BinaryTree(2)
+    invalid_bst.left.left = BinaryTree(4)
+    invalid_bst.left.left.left = BinaryTree(8)
+    invalid_bst.left.left.right = BinaryTree(9)
+    invalid_bst.left.right = BinaryTree(5)
+    invalid_bst.left.right.right = BinaryTree(10)
+    invalid_bst.right = BinaryTree(3)
+    invalid_bst.right.left = BinaryTree(6)
+    invalid_bst.right.right = BinaryTree(7)
 
-    res = validate_bst(root)
+    # create valid BST
+    valid_bst = BinaryTree(11)
+    valid_bst.left = BinaryTree(5)
+    valid_bst.left.left = BinaryTree(3)
+    valid_bst.left.right = BinaryTree(5)
+    valid_bst.left.left.left = BinaryTree(1)
+    valid_bst.right = BinaryTree(15)
+    valid_bst.right.left = BinaryTree(13)
+    valid_bst.right.right = BinaryTree(30)
 
+    # check if bsts are valid/ invalid
+    res_1 = validate_bst(invalid_bst)
+    res_2 = validate_bst(valid_bst)
+
+
+    # print results
+    print_results(res_1)
+    print_results(res_2)
+
+
+def print_results(res):
+    """ prints results"""
     if res:
         print(f"The tree is a valid BST ")
     else:
