@@ -90,7 +90,7 @@ def create_tree():
 
 
 def main():
-    """ main function """
+    """ main function   """
 
     # create ancestor tree Trees
     ancestor_tree = create_tree()
