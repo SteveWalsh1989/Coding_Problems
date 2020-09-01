@@ -85,7 +85,6 @@ def main():
     res_1 = validate_bst(invalid_bst)
     res_2 = validate_bst(valid_bst)
 
-
     # print results
     print_results(res_1)
     print_results(res_2)
