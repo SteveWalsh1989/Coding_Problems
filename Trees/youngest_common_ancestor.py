@@ -36,7 +36,49 @@ _____________________________________________________________________
 
 def get_youngest_ancestor(top_ancestor, descendant_1, descendant_2):
     """ returns youngest common ancestor between two descendants in an ancestor tree"""
+    # calculate depths of each descendant
+    depth_descendant_1 = get_descendant_depth(descendant_1, top_ancestor)
+    depth_descendant_2 = get_descendant_depth(descendant_2, top_ancestor)
 
+    # move descendants to the same level
+    if depth_descendant_1 > depth_descendant_2:
+        return traverse_ancestor_tree(descendant_1, descendant_2, depth_descendant_1 - depth_descendant_2)
+    else:
+        return traverse_ancestor_tree(descendant_2, descendant_1, depth_descendant_2 - depth_descendant_1)
+
+
+def get_descendant_depth(descendant, top_ancestor):
+    """ returns depth of descendant within ancestor tree """
+    # initialise return value
+    depth = 0
+
+    while descendant != top_ancestor:
+        # increase depth
+        depth += 1
+        # move up level within tree
+        descendant = descendant.ancestor
+
+    # return depth
+    return depth
+
+
+def traverse_ancestor_tree(lower_descendant, higher_descendant, depth_diff):
+    """ Gets two descendants onto the same level and then finds lowest common ancestor"""
+
+    # get descendants on the same level
+    while depth_diff > 0:
+        # set descendant to ancestor
+        lower_descendant = lower_descendant.ancestor
+
+        # decrease diff
+        depth_diff -= 1
+
+    # traverse ancestors together
+    while lower_descendant != higher_descendant:
+        lower_descendant = lower_descendant.ancestor
+        higher_descendant = higher_descendant.ancestor
+
+    return lower_descendant
 
 
 def create_tree():
@@ -52,10 +94,10 @@ def main():
 
     # create ancestor tree Trees
     ancestor_tree = create_tree()
-    ancestor_tree["A"].addDescendants(ancestor_tree["B"], ancestor_tree["C"])
-    ancestor_tree["B"].addDescendants(ancestor_tree["D"], ancestor_tree["E"])
-    ancestor_tree["D"].addDescendants(ancestor_tree["H"], ancestor_tree["I"])
-    ancestor_tree["C"].addDescendants(ancestor_tree["F"], ancestor_tree["G"])
+    ancestor_tree["A"].add_descendants(ancestor_tree["B"], ancestor_tree["C"])
+    ancestor_tree["B"].add_descendants(ancestor_tree["D"], ancestor_tree["E"])
+    ancestor_tree["D"].add_descendants(ancestor_tree["H"], ancestor_tree["I"])
+    ancestor_tree["C"].add_descendants(ancestor_tree["F"], ancestor_tree["G"])
 
     # Set inputs
     input_1 = ancestor_tree["A"]
@@ -75,7 +117,7 @@ class Trees:
         self.value = value
         self.ancestor = None
 
-    def add_descendant(self, *descendants):
+    def add_descendants(self, *descendants):
         for descendant in descendants:
             descendant.ancestor = self
 
