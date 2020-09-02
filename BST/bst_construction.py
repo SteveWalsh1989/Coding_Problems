@@ -10,7 +10,7 @@ __________________________________________________________________
 
 BST is said to be valid if:
 - it’s value is strictly greater than the value of every node to it’s left
-- iuts value is equal to or less than any value to it’s right
+- its value is equal to or less than any value to it’s right
 - it’s child nodes are either valid BST or null
 
 __________________________________________________________________
