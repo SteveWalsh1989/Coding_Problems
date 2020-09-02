@@ -1,13 +1,13 @@
 """
 
 
-Function that takes in a BST and returns if a valid BST.
+Function that takes in a Trees and returns if a valid Trees.
 __________________________________________________________________
 
-BST is said to be valid if:
+Trees is said to be valid if:
 - it’s value is strictly greater than the value of every node to it’s left
 - its value is equal to or less than any value to it’s right
-- it’s child nodes are either valid BST or null
+- it’s child nodes are either valid Trees or null
 
 __________________________________________________________________
 Valid:
@@ -59,7 +59,7 @@ def validate_bst_helper(tree, max_val, min_val):
 def main():
     """ Main function """
 
-    # create invalid BST
+    # create invalid Trees
     invalid_bst = BinaryTree(1)
     invalid_bst.left = BinaryTree(2)
     invalid_bst.left.left = BinaryTree(4)
@@ -71,7 +71,7 @@ def main():
     invalid_bst.right.left = BinaryTree(6)
     invalid_bst.right.right = BinaryTree(7)
 
-    # create valid BST
+    # create valid Trees
     valid_bst = BinaryTree(11)
     valid_bst.left = BinaryTree(5)
     valid_bst.left.left = BinaryTree(3)
@@ -93,9 +93,9 @@ def main():
 def print_results(res):
     """ prints results"""
     if res:
-        print(f"The tree is a valid BST ")
+        print(f"The tree is a valid Trees ")
     else:
-        print(f"The tree is not a valid BST ")
+        print(f"The tree is not a valid Trees ")
 
 
 # This is the class of the input binary tree.

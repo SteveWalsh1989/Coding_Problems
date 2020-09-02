@@ -1,17 +1,17 @@
 
 """
 
-Write a BST class that supports:
+Write a Trees class that supports:
 - inserting new nodes
 - removing nodes
   - a node can be replaced by the left most node of it’s right sided child as it is smaller than any other node on it’s side and strictly greater than any node from the left hand child’s nodes from the original node
 - searching for values
 __________________________________________________________________
 
-BST is said to be valid if:
+Trees is said to be valid if:
 - it’s value is strictly greater than the value of every node to it’s left
 - its value is equal to or less than any value to it’s right
-- it’s child nodes are either valid BST or null
+- it’s child nodes are either valid Trees or null
 
 __________________________________________________________________
 Valid:
@@ -57,26 +57,26 @@ def main():
     check_val = 4
     contains = new_bst.contains(check_val)
 
-    print(f"BST created ")
+    print(f"Trees created ")
 
     if contains:
-        print(f"The BST contains {check_val}" )
+        print(f"The Trees contains {check_val}" )
     else:
-        print(f"The BST does not contain {check_val}")
+        print(f"The Trees does not contain {check_val}")
 
     new_bst.delete(check_val)
     contains = new_bst.contains(check_val)
 
-    print(f"Removed {check_val} from BST")
+    print(f"Removed {check_val} from Trees")
 
     if contains:
-        print(f"The BST contains {check_val}")
+        print(f"The Trees contains {check_val}")
     else:
-        print(f"The BST does not contain {check_val}")
+        print(f"The Trees does not contain {check_val}")
 
 
 class BST:
-    """BST class """
+    """Trees class """
 
     def __init__(self, value):
         self.value = value
@@ -84,7 +84,7 @@ class BST:
         self.right = None
 
     def insert(self, value):
-        """ Inserts a value as node in BST """
+        """ Inserts a value as node in Trees """
 
         # track current node
         current_node = self
@@ -93,7 +93,7 @@ class BST:
             # when less traverse left
             if value < current_node.value:
 
-                # If leaf node add value as BST
+                # If leaf node add value as Trees
                 if current_node.left is None:
                     current_node.left = BST(value)
                     break
@@ -103,7 +103,7 @@ class BST:
             # when more traverse right
             else:
 
-                # If leaf node add value as BST
+                # If leaf node add value as Trees
                 if current_node.right is None:
                     current_node.right = BST(value)
                     break
@@ -115,7 +115,7 @@ class BST:
         return self
 
     def contains(self, value):
-        """ Checks if BST contains a value - returns true/false"""
+        """ Checks if Trees contains a value - returns true/false"""
         # keep track of current node
         current_node = self
 
@@ -131,7 +131,7 @@ class BST:
                 return True
 
     def delete(self, value):
-        """ remove nodes from BST """
+        """ remove nodes from Trees """
 
         # keep track of current node
         current_node = self
@@ -168,7 +168,7 @@ class BST:
                         current_node.left = current_node.right.left
                         current_node.right = current_node.right.right
                     else:
-                        # root node with no children - IE: deleting the BST
+                        # root node with no children - IE: deleting the Trees
                         current_node.value = None
 
                 # has one or no child nodes - assign either left or right
@@ -182,7 +182,7 @@ class BST:
                 return self
 
     def get_lowest_value(self):
-        """ Gets the lowest value in a right side of BST"""
+        """ Gets the lowest value in a right side of Trees"""
         # called on right sub tree
         current_node = self
 

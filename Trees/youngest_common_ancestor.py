@@ -50,7 +50,7 @@ def create_tree():
 def main():
     """ main function """
 
-    # create ancestor tree BST
+    # create ancestor tree Trees
     ancestor_tree = create_tree()
     ancestor_tree["A"].addDescendants(ancestor_tree["B"], ancestor_tree["C"])
     ancestor_tree["B"].addDescendants(ancestor_tree["D"], ancestor_tree["E"])

@@ -1,5 +1,5 @@
 """
-Given a BST return the sum of the depth of each node
+Given a Trees return the sum of the depth of each node
 
 ____________________________________________________________
 0             1
@@ -54,7 +54,7 @@ def node_depth(root, depth=0):
 def main():
     """ Main function"""
 
-    # create BST - res should be 16
+    # create Trees - res should be 16
     root = BinaryTree(1)
     root.left = BinaryTree(2)
     root.left.left = BinaryTree(4)
@@ -67,7 +67,7 @@ def main():
 
     res = node_depth(root)
 
-    print(f" The sum of node depths for BST is {res}")
+    print(f" The sum of node depths for Trees is {res}")
 
 
 # This is the class of the input binary tree.

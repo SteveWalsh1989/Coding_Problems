@@ -1,6 +1,6 @@
 """
 
-Finding the closest value in a BST - numbers are unique
+Finding the closest value in a Trees - numbers are unique
 __________________________________________________________________
 
 0               40
@@ -55,7 +55,7 @@ def find_closest_value_helper(tree, target, best_candidate):
 def main():
     """ Main function"""
 
-    # create BST
+    # create Trees
     root = BinaryTree(40)
     root.left = BinaryTree(33)
     root.left.left = BinaryTree(20)
@@ -69,7 +69,7 @@ def main():
     value = 3
     res = find_closest_value(root, value)
 
-    print(f" The closest value in the BST to {value} is {res}")
+    print(f" The closest value in the Trees to {value} is {res}")
 
 
 # This is the class of the input binary tree.

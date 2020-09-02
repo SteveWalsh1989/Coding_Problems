@@ -1,5 +1,5 @@
 """
-Given a BST, create function that returns a list of it’s branch sums
+Given a Trees, create function that returns a list of it’s branch sums
 ordered from leftmost branch sums to the rightmost branch sums
 __________________________________________________________________
 
@@ -43,7 +43,7 @@ Time: O(N)
 
 
 def get_branch_sum(root):
-    """sums values of all branches within a BST"""
+    """sums values of all branches within a Trees"""
     sums = []
 
     branch_sum_helper(root, 0, sums)
@@ -71,7 +71,7 @@ def branch_sum_helper(node, total_sum, sums):
 def main():
     """ Main function"""
 
-    # create BST
+    # create Trees
     root = BinaryTree(1)
     root.left = BinaryTree(2)
     root.left.left = BinaryTree(4)
@@ -85,7 +85,7 @@ def main():
 
     sums = get_branch_sum(root)
 
-    print(f" The list of all sums of each branches within BST is {sums}")
+    print(f" The list of all sums of each branches within Trees is {sums}")
 
 
 # This is the class of the input binary tree.
